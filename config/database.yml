@@ -19,11 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
-development:
-  <<: *default
-  database: engineering_take_home_development
-
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
@@ -41,6 +36,10 @@ development:
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
   port: 5432
+
+development:
+  <<: *default
+  database: engineering_take_home_development
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
