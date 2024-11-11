@@ -23,6 +23,8 @@ COPY --chown=ruby:ruby Gemfile* ./
 RUN bundle install
 
 COPY --chown=ruby:ruby package.json *yarn* ./
+RUN npm install - yarn
+RUN yarn --version
 RUN yarn install
 
 ARG RAILS_ENV="development"
