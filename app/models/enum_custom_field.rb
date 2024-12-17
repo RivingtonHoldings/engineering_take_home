@@ -1,0 +1,2 @@
+class EnumCustomField < ApplicationRecord
+end
