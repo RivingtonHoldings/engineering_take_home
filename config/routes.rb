@@ -12,4 +12,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "welcome#index"
+
+  namespace :api do
+    resources :buildings, only: [ :create, :update, :index ]
+  end
 end
