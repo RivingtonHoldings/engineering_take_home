@@ -9,7 +9,7 @@ class CustomFieldsBuilder
     if result.success?
       Success(add_defaults(schema_field_names:, custom_fields:))
     else
-      Failure(errors.to_h)
+      Failure(result.errors(full: true).to_h.values.flatten)
     end
   end
 

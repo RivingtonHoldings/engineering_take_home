@@ -8,7 +8,7 @@ class InputCustomField < ApplicationRecord
     when "freeform"
       String
     when "numeric"
-      Numeric
+      Float
     else
       nil
     end
