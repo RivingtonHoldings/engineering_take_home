@@ -6,5 +6,6 @@ FactoryBot.define do
     city { Faker::Address.city }
     state { Faker::Address.state_abbr }
     zipcode { Faker::Address.zip_code }
+    custom_fields { {} }
   end
 end
