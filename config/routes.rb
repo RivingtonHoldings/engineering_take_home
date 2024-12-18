@@ -13,9 +13,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "welcome#index"
 
-  constraints format: :json do
-    namespace :api do
-      resources :buildings, only: [ :create, :update, :index ]
-    end
-  end
+  resources :buildings, only: [ :show, :create, :update, :index ], constraints: { format: "json" }, defaults: { format: "json" }
 end

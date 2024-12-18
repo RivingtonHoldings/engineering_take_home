@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_17_210045) do
     t.string "city", null: false
     t.string "state", null: false
     t.string "zipcode", null: false
-    t.jsonb "custom_fields"
+    t.jsonb "custom_fields", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_buildings_on_client_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_17_210045) do
     t.bigint "client_id"
     t.string "name", null: false
     t.string "values", default: [], array: true
+    t.date "effective"
     t.date "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,7 +47,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_17_210045) do
   create_table "input_custom_fields", force: :cascade do |t|
     t.bigint "client_id"
     t.string "name", null: false
-    t.integer "type", null: false
+    t.integer "input_type", null: false
+    t.date "effective"
     t.date "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
