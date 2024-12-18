@@ -63,7 +63,7 @@ class BuildingsController < ApplicationController
   private
 
   def error_handler(exception)
-    render json: { message: exception, backtrace: exception.backtrace.join("\n") }, status: :bad_request
+    render json: { message: exception }, status: :bad_request
   end
 
   def set_client
